@@ -5,7 +5,7 @@ This application fetches and display a list of organizations from Github’s pub
 
 
 # Features
-* kotlin flows and coroutine for data streaming
+* kotlin flows and coroutine for asynchronous tasks
 * MVVM architecture
 * View binding for binding views
 * Retrofit used to make network calls
@@ -13,6 +13,7 @@ This application fetches and display a list of organizations from Github’s pub
 * RecyclerView to show list-items
 * Dependency injection with Dagger Hilt to manage dependencies and classes
 * Mockito used for unit test
+
 
 
 
