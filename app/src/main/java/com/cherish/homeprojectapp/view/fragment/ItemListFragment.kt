@@ -41,7 +41,7 @@ class ItemListFragment : Fragment() {
         getOrganizationList()
     }
 
-    private fun stopShimmer() {
+    private fun stopLoading() {
         binding.loading.wrapper.apply {
             binding.loading.shimmerLayout.stopShimmer()
             visibility = View.GONE
@@ -52,13 +52,13 @@ class ItemListFragment : Fragment() {
         viewModel.getOrganization().observe(viewLifecycleOwner) { response ->
             when (response) {
                 is ResponseManager.Failure -> {
-                    stopShimmer()
+                    stopLoading()
                     binding.emptyOrError.wrapper.visibility = View.VISIBLE
                 }
                 is ResponseManager.Loading -> {
                     when (response.state) {
                         true -> binding.loading.shimmerLayout.startShimmer()
-                        false -> stopShimmer()
+                        false -> stopLoading()
                     }
                 }
                 is ResponseManager.Success -> {
